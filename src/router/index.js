@@ -1,45 +1,51 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '@/views/Home'
-import SearchResults from '@/views/SearchResults'
-import Login from '@/views/Login'
-import Register from '@/views/Register'
-import NotFound from '@/views/NotFound'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "@/views/Home";
+import SearchResults from "@/views/SearchResults";
+import Login from "@/views/Login";
+import Register from "@/views/Register";
+import NotFound from "@/views/NotFound";
+import PlayList from "@/views/PlayList";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes = [
+const routes = [
   {
-      path: '/',
-      name:'home',
-      component: Home
-  },  
-  {
-    path: '/login',
-    name:'login',
-    component: Login
+    path: "/",
+    name: "home",
+    component: Home,
   },
   {
-    path: '/register',
-    name:'register',
-    component: Register
-  },        
+    path: "/login",
+    name: "login",
+    component: Login,
+  },
   {
-    path: '/search/:q',
-    name:'search',
-    component: SearchResults
-  },  
+    path: "/register",
+    name: "register",
+    component: Register,
+  },
   {
-      path: '*',
-      name:'notfound',
-      component: NotFound
-  }    
-]
+    path: "/search/:q",
+    name: "search",
+    component: SearchResults,
+  },
+  {
+    path: "/playlist/:q",
+    name: "playlist",
+    component: PlayList,
+  },
+  {
+    path: "*",
+    name: "notfound",
+    component: NotFound,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

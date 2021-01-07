@@ -4,6 +4,7 @@
       class="playlist col-sm-6 col-md-4 col-lg-3 col-xl-25"
       v-for="artist in playlists"
       :key="artist.artistId"
+      v-on:click="playlistClicked(artist.id)"
     >
       <div class="playlist__picture">
         <img
@@ -21,6 +22,11 @@
 export default {
   name: "PlayLists",
   props: { playlists: Array },
+  methods: {
+    playlistClicked: function (id) {
+      window.location.href = `/playlist/${id}`;
+    },
+  },
 };
 </script>
 
@@ -48,7 +54,7 @@ export default {
     transition: all 125ms ease-in-out;
     cursor: pointer;
     &__image {
-    width: 100%;
+      width: 100%;
       transition: all 125ms ease-in-out;
     }
   }
@@ -56,7 +62,7 @@ export default {
 .playlist:hover {
   .playlist {
     &__title {
-    color: black;
+      color: black;
     }
     &__picture {
       box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px 0px;
