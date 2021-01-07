@@ -24,7 +24,12 @@ export default {
   props: { playlists: Array },
   methods: {
     playlistClicked: function (id) {
-      window.location.href = `/playlist/${id}`;
+      this.$router
+        .push({
+          name: "playlist",
+          params: { q: id },
+        })
+        .catch(() => {});
     },
   },
 };

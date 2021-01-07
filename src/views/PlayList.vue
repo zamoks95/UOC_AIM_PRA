@@ -1,6 +1,9 @@
 <template>
   <main class="play-list">
-    <section class="playlist-detail">
+    <section class="playlist-detail" v-if="playlistData === 'loading'">
+      <Spinner />
+    </section>
+    <section class="playlist-detail" v-else>
       <div class="playlist-detail__image">
         <img :src="playlistData.picture_xl" :alt="playlistData.name" />
       </div>
@@ -23,10 +26,11 @@
 <script>
 import TrackList from "@/components/Tracks/TrackList";
 import { getPlaylists } from "../api";
+import Spinner from "@/components/Spinner";
 
 export default {
   name: "PlayList",
-  components: { TrackList },
+  components: { TrackList, Spinner },
   data() {
     return {
       playlistData: null,
@@ -36,6 +40,8 @@ export default {
     };
   },
   async created() {
+    this.playlistData = "loading";
+    this.tracksTotal = 0;
     (async () => {
       this.playlistData = await getPlaylists(this.$route.params.q);
       this.tracks = this.playlistData.tracks.data;
@@ -75,7 +81,7 @@ export default {
       color: white;
       font-size: 60px;
       font-weight: bold;
-      -webkit-text-stroke: 1px  #0000008f;
+      -webkit-text-stroke: 1px #0000008f;
       text-shadow: 2px 2px 5px #0000008f;
       line-height: 40px;
     }
@@ -83,7 +89,7 @@ export default {
       color: white;
       font-size: 40px;
       font-weight: bold;
-      -webkit-text-stroke: 1px  #0000008f;
+      -webkit-text-stroke: 1px #0000008f;
       text-shadow: 2px 2px 5px #0000008f;
       letter-spacing: -1px;
     }

@@ -1,5 +1,5 @@
 <template>
-  <form @submit="search" class="search-bar">
+  <form @submit.prevent="search" class="search-bar">
     <label class="visibility-hidden" for="buscador">Buscar</label>
     <input
       id="buscador"

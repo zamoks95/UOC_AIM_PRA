@@ -15,7 +15,7 @@
           <div v-if="tracks.length > 0">
             <track-list v-if="tracks" :tracks="tracks.slice(0, 6)" />
           </div>
-          <div v-else><NoResults :type="'tracks'"/></div>
+          <div v-else><NoResults :type="'tracks'" /></div>
         </div>
         <h2 class="title">
           Álbumes <fa-icon icon="chevron-right" class="icon" />
@@ -28,7 +28,7 @@
           <div v-if="albums.length > 0">
             <album-list :albums="albums.slice(0, 6)" />
           </div>
-          <div v-else><NoResults :type="'albums'"/></div>
+          <div v-else><NoResults :type="'albums'" /></div>
         </div>
         <h2 class="title">
           Artistas <fa-icon icon="chevron-right" class="icon" />
@@ -40,7 +40,7 @@
           <div v-if="artists.length > 0">
             <artist-list v-if="artists" :artists="artists.slice(0, 6)" />
           </div>
-          <div v-else><NoResults :type="'artist'"/></div>
+          <div v-else><NoResults :type="'artist'" /></div>
         </div>
       </b-tab>
       <b-tab id="tabTracks" title="Canciones">
@@ -52,7 +52,7 @@
           <div v-if="tracks.length > 0">
             <track-list v-if="tracks" :tracks="tracks" />
           </div>
-          <div v-else><NoResults :type="'tracks'"/></div>
+          <div v-else><NoResults :type="'tracks'" /></div>
         </div>
       </b-tab>
       <b-tab id="tabAlbums" title="Álbumes">
@@ -64,7 +64,7 @@
           <div v-if="albums.length > 0">
             <album-list v-if="albums" :albums="albums" />
           </div>
-          <div v-else><NoResults :type="'albums'"/></div>
+          <div v-else><NoResults :type="'albums'" /></div>
         </div>
       </b-tab>
       <b-tab id="tabArtists" title="Artistas">
@@ -76,11 +76,10 @@
           <div v-if="artists.length > 0">
             <artist-list v-if="artists" :artists="artists" />
           </div>
-          <div v-else><NoResults :type="'artist'"/></div>
+          <div v-else><NoResults :type="'artist'" /></div>
         </div>
       </b-tab>
     </b-tabs>
-    
   </main>
 </template>
 
