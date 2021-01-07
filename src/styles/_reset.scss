@@ -1,0 +1,6 @@
+.col-xl-25 {
+    @media only screen and (min-width: $xl) {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
