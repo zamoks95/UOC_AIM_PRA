@@ -1,5 +1,10 @@
 # vue-uocify
 
+## URL projecte a Netlify: 
+```
+https://uocify-szamora95.netlify.app/
+```
+
 ## Project setup
 ```
 npm install
