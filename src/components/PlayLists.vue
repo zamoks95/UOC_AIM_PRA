@@ -10,7 +10,7 @@
         <img
           class="playlist__picture__image"
           :src="artist.picture_medium"
-          :alt="artist.name"
+          :alt="artist.title"
         />
       </div>
       <span class="playlist__title">{{ artist.title }}</span>

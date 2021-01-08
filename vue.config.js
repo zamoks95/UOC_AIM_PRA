@@ -7,8 +7,8 @@ module.exports = {
     }
   },
   pwa: {
-    name: 'My App',
-    themeColor: '#4DBA87',
+    name: 'UOCIFY',
+    themeColor: '#000078',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
